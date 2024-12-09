@@ -4,17 +4,117 @@
     font-family: "Montserrat", sans-serif;
 }
 
-.Buttom_solid {
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin-inline: 24px;
+    margin: auto;
+}
+.header {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    width: 1000px;
+    margin: auto;
+}
+
+.nav_j {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 30px; width: 30px;
+}
+
+.header_icon {
+    color: rgb(190, 71, 111);
+}
+
+.info {
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.info-avt {
+    width: 500px;
+}
+
+.info-avt img {
+    width: 100%;
+}
+
+.info-text {
+    margin-left: 70px;
+}
+.text-hi {
+    font-size: 15px;
+}
+
+.text-main {
+    font-size: 33px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.text-product {
+    display: flex;
+    justify-content: space-between;
+}
+.product_number {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(190, 71, 111);
+}
+.product_text {
+    font-size: 14px;
+    color: gray;
+}
+
+.content {
+    width: 1000px;
+    margin: auto;
+}
+.content-about {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.content-text {
+    font-size: 25px;
+    color: gray;
+}
+.button-arr {
+    font-size: 20px;
+    margin: 61px 370px;
+    height: 39px;
+    width: 235px;
+    border: 1px solid rgb(190, 71, 111);
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(190, 71, 111);
+}
+.button-skills {
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    margin: auto;
+}
+
+.button-skills_small {
     display: inline-block;
     width: 90px;
     height: 30px;
-    border: 0.5px solid rgb(207, 142, 153);
+    border: 0.5px solid gray;
     border-radius: 20px;
     padding-top: 10px;
-    padding-left: 11px;
-    margin: 7px;    
+    text-align: center;
+    margin: 7px; 
+    color: rgb(48, 47, 47);  
 }
 
-.ColorPink {
-    color: rgb(207, 142, 153)
-}
