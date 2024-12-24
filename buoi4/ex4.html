@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4</title>
+    <link rel="stylesheet" href="ex4.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-bar-icon_spotify" style="width: 45px;">
+                        <i class="fa fa-spotify" aria-hidden="true" style="color: whitesmoke;font-size: 43px;"></i>
+                </div>
+                <div class="nav-bar-icon-home">
+                    <button class="icon_home">
+                        <span>
+                            <svg style="color: white    ;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                              </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="nav-bar-search_info">
+                    <div class="nav-bar-input_info">
+                        <div class="button_info">
+                                <span class="icon_search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                    </svg>
+                                </span>
+                                <div class="input_info">
+                                    <input type="text" value="Bạn muốn phát nội dung gì?" class="info">
+                                </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-bar-setting">
+                    <button class="update_premium">Khám phá premium</button>
+                    <button class="setting">Cài đặt ứng dụng</button>
+                    <a class="notification">
+                        <svg xmlns="http://www.w3.org/2000/svg"  
+                            width="30" height="30" 
+                            fill="currentColor" 
+                            class="bell" 
+                            viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                        </svg>
+                    </a>
+                    <button class="project">
+                            <img src="avt.jpg" alt="" style="height: 30px;width: 30px; border-radius: 999px;background-position: center;">
+                    </button>
+                </div>
+            </div>
+            <div class="main" style="display: flex;">
+                <div class="side-bar">
+                    <div class="side-bar-library">
+                        <div class="library">
+                            <span class="right">
+                                <div class="icon_library">
+                                    <svg style="color: #7c7c7c;" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
+                                    <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path></svg>
+                            </div>
+                            <div class="text_library">Thư viện</div>
+                            </span>
+                            <a href="" class="icon_plus">
+                                <svg style="color: #7c7c7c;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                  </svg>
+                            </a>
+                        </div>
+                        <div class="legacy">
+                            <ul class="legacy_ul_button">
+                                <li>
+                                    <button style="width: 132px;"  class="button_playlist">
+                                        <span class="legacy_text">Danh sách phát</span>
+                                    </button>  
+                                </li>
+                                <li>
+                                    <button style="width: 74px;" class="button_artist">
+                                        <span class="legacy_text">Nghệ sĩ</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button style="width: 200px;" class="button_postcastprogramme">
+                                        <span class="legacy_text">Postcast và chương trình</span>
+                                    </button>
+                                </li>
+                                <li style="position:absolute; right: 0px;">
+                                    <button class="button_arrow">
+                                        <svg style="width: 20px; padding-top: 3px; color: white;" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dCAvla">
+                                        <path d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"></path></svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sida-bar-list">
+                        <div class="list_search">
+                            <div class="list_icon_search">
+                                <svg  style="color: #b3b3b3;padding-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                            </div>
+                            <div class="list_history">
+                                <div class="history_lately">Gần đây</div>
+                                <div class="history_icon">
+                                    <svg style="color: #b3b3b3;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-music_of_artist">
+                            <ul>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                                <img src="bb.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">BIGBANG</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="bp.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">BLACKPINK</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="gd.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">G-DRAGON</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="hth.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">HIEUTHUHAI</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="mtp.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">Sơn Tùng M-TP</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="den.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">Đen</div>
+                                        <div class="list-artist_celeb"></div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="bray.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">B Ray</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                                <li class="li-list-music" >
+                                    <div class="list-avatar_artist">
+                                        <div class="side-bar-avt">
+                                            <img src="ngot.jpg" alt="" style="width: 48px;height: 48px;border-radius: 9999px;">
+                                        </div>
+                                        <div class="side-bar-icon_play">
+                                            <svg  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi-play-fill" viewBox="0 0 16 16">
+                                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                              </svg>
+                                        </div>
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-name_celeb">Ngọt</div>
+                                        <div class="list-artist_celeb">Nghệ Sĩ</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                        <div class="content-filter-homepage">
+                            <div class="filter-homepage">
+                                <div class="fileter-home-button">
+                                    <button class="filter-button" style="background-color: white;">
+                                        <span style="font-weight: 500;font-size: 15px;color: rgb(0, 0, 0);"> Tất cả </span>
+                                    </button>
+                                    <button class="filter-button">
+                                        <span style="font-weight: 500;font-size: 15px;color: white;"> Nhạc </span>
+                                    </button>
+                                    <button class="filter-button">
+                                        <span style="font-weight: 500;font-size: 15px;color: white;"> Postcast </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-main">
+                            <section class="main-directory" data-name="Dành cho Quốc Dũng">
+                                 <div class="directory-text">
+                                       <div class="directory-text-name">
+                                            <a href="" class="text-name-a" >Dành cho Quốc Dũng</a>
+                                       </div>
+                                       <div class="directory-text-show_all">
+                                            <a href="" class="text-name-a">Hiện tất cả</a>
+                                       </div> 
+                                 </div>
+                                 <div class="main-directory-box">
+                                    <div class="directory-box">
+                                        <div class="box-avt">
+                                            <div class="box-image">
+                                                <img src="gd1.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                            </div>
+                                        <div class="box-button_play">
+                                              <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                                aria-hidden="true">
+                                             </i>   
+                                        </div>
+                                        </div>
+                                        <div class="box-text">
+                                            <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;">G-Dragon</a>
+                                        </div>
+                                    </div>
+                                    <div class="directory-box">
+                                        <div class="box-avt">
+                                            <div class="box-image">
+                                                <img src="hth2.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                            </div>
+                                        <div class="box-button_play">
+                                              <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                                aria-hidden="true">
+                                             </i>   
+                                        </div>
+                                        </div>
+                                        <div class="box-text">
+                                            <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >HIEUTHUHAI</a>
+                                        </div>
+                                    </div><div class="directory-box">
+                                        <div class="box-avt">
+                                            <div class="box-image">
+                                                <img src="rapviet.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                            </div>
+                                        <div class="box-button_play">
+                                              <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                                aria-hidden="true">
+                                             </i>   
+                                        </div>
+                                        </div>
+                                        <div class="box-text">
+                                            <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Nhún nhảy theo những giai điệu mới toanh từ nghệ sĩ bạn theo dõi và đĩa đơn mới dành cho bạn. Cập nhật mỗi thứ Sáu.</a>
+                                        </div>
+                                   <div class="directory-box">
+                                        <div class="box-avt">
+                                            <div class="box-image">
+                                                <img src="bb.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                            </div>
+                                        <div class="box-button_play">
+                                              <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                                aria-hidden="true">
+                                             </i>   
+                                        </div>
+                                        </div>
+                                        <div class="box-text">
+                                            <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Big Bang </a>
+                                        </div>
+                                    </div>
+                            </section>
+                            <section class="main-directory" data-name="Tập dành cho bạn">
+                                <div class="directory-text">
+                                      <div class="directory-text-name">
+                                           <a href="" class="text-name-a" >Tập dành cho bạn</a>
+                                      </div>
+                                      <div class="directory-text-show_all">
+                                           <a href="" class="text-name-a">Hiện tất cả</a>
+                                      </div> 
+                                </div>
+                                <div class="main-directory-box">
+                                   <div class="directory-box">
+                                       <div class="box-avt">
+                                           <div class="box-image">
+                                               <img src="EL.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                           </div>
+                                       <div class="box-button_play">
+                                             <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                               aria-hidden="true">
+                                            </i>   
+                                       </div>
+                                       </div>
+                                       <div class="box-text">
+                                           <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;">English Listening - The Benefits of Learning a Language</a>
+                                       </div>
+                                   </div>
+                                   <div class="directory-box">
+                                       <div class="box-avt">
+                                           <div class="box-image">
+                                               <img src="trikicamxuc.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                           </div>
+                                       <div class="box-button_play">
+                                             <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                               aria-hidden="true">
+                                            </i>   
+                                       </div>
+                                       </div>
+                                       <div class="box-text">
+                                           <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Làm Sao Yêu Thương Có Trí Tuệ - Tri Kỷ Cảm Xúc #361</a>
+                                       </div>
+                                   </div>
+                                   <div class="directory-box">
+                                       <div class="box-avt">
+                                           <div class="box-image">
+                                               <img src="nguyen-phi-van-blog.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                           </div>
+                                       <div class="box-button_play">
+                                             <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                               aria-hidden="true">
+                                            </i>   
+                                       </div>
+                                       </div>
+                                       <div class="box-text">
+                                           <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Tư duy như nước </a>
+                                       </div>
+                                    </div>
+                                  <div class="directory-box">
+                                       <div class="box-avt">
+                                           <div class="box-image">
+                                               <img src="duy-thanh-nguyen.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                           </div>
+                                       <div class="box-button_play">
+                                             <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                               aria-hidden="true">
+                                            </i>   
+                                       </div>
+                                       </div>
+                                       <div class="box-text">
+                                           <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >#30 - Đàm Phán: Đừng bao giờ chia đôi lợi ích </a>
+                                       </div>
+                                    </div>
+                                       <div class="directory-box">
+                                        <div class="box-avt">
+                                            <div class="box-image">
+                                                <img src="huynh-duy-khuong.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                            </div>
+                                        <div class="box-button_play">
+                                              <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                                aria-hidden="true">
+                                             </i>   
+                                        </div>
+                                        </div>
+                                        <div class="box-text">
+                                            <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >384. Nếu ai đó chọc ghẹo bạn, hãy nói với họ điều này</a>
+                                        </div>
+                                   </div>
+                                   <div class="directory-box">
+                                    <div class="box-avt">
+                                        <div class="box-image">
+                                            <img src="cay-nen.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                        </div>
+                                    <div class="box-button_play">
+                                          <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                            aria-hidden="true">
+                                         </i>   
+                                    </div>
+                                    </div>
+                                    <div class="box-text">
+                                        <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >SS5E12: Kết lại nỗi lo toan về tiền</a>
+                                    </div>
+                                </div>
+                           </section>
+                           <section class="main-directory" data-name="Tập dành cho bạn">
+                            <div class="directory-text">
+                                  <div class="directory-text-name">
+                                       <a href="" class="text-name-a" >Radio phổ biến</a>
+                                  </div>
+                                  <div class="directory-text-show_all">
+                                       <a href="" class="text-name-a">Hiện tất cả</a>
+                                  </div> 
+                            </div>
+                            <div class="main-directory-box">
+                               <div class="directory-box">
+                                   <div class="box-avt">
+                                       <div class="box-image">
+                                           <img src="atsh.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                       </div>
+                                   <div class="box-button_play">
+                                         <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                           aria-hidden="true">
+                                        </i>   
+                                   </div>
+                                   </div>
+                                   <div class="box-text">
+                                       <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;">Với ANH TRAI "SAY HI", Quang Trung, RHYDER và nhiều hơn nữa</a>
+                                   </div>
+                               </div>
+                               <div class="directory-box">
+                                   <div class="box-avt">
+                                       <div class="box-image">
+                                           <img src="dangrangto.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                       </div>
+                                   <div class="box-button_play">
+                                         <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                           aria-hidden="true">
+                                        </i>   
+                                   </div>
+                                   </div>
+                                   <div class="box-text">
+                                       <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với Wxrdie, RPT MCK, Low G và nhiều hơn nữa</a>
+                                   </div>
+                               </div>
+                               <div class="directory-box">
+                                   <div class="box-avt">
+                                       <div class="box-image">
+                                           <img src="hth3.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                       </div>
+                                   <div class="box-button_play">
+                                         <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                           aria-hidden="true">
+                                        </i>   
+                                   </div>
+                                   </div>
+                                   <div class="box-text">
+                                       <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với MANBO, ANH TRAI "SAY HI", RPT MCK và nhiều hơn nữa </a>
+                                   </div>
+                                </div>
+                              <div class="directory-box">
+                                   <div class="box-avt">
+                                       <div class="box-image">
+                                           <img src="chillies.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                       </div>
+                                   <div class="box-button_play">
+                                         <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                           aria-hidden="true">
+                                        </i>   
+                                   </div>
+                                   </div>
+                                   <div class="box-text">
+                                       <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với Thịnh Suy, Vũ., Da LAB và nhiều hơn nữa </a>
+                                   </div>
+                                </div>
+                                   <div class="directory-box">
+                                    <div class="box-avt">
+                                        <div class="box-image">
+                                            <img src="vu.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                        </div>
+                                    <div class="box-button_play">
+                                          <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                            aria-hidden="true">
+                                         </i>   
+                                    </div>
+                                    </div>
+                                    <div class="box-text">
+                                        <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >384. Nếu ai đó chọc ghẹo bạn, hãy nói với họ điều này</a>
+                                    </div>
+                               </div>
+                               <div class="directory-box">
+                                <div class="box-avt">
+                                    <div class="box-image">
+                                        <img src="cay-nen.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                    </div>
+                                <div class="box-button_play">
+                                      <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                        aria-hidden="true">
+                                     </i>   
+                                </div>
+                                </div>
+                                <div class="box-text">
+                                    <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >SS5E12: Kết lại nỗi lo toan về tiền</a>
+                                </div>
+                            </div>
+                       </section>
+                       <section class="main-directory" data-name="Tập dành cho bạn">
+                        <div class="directory-text">
+                              <div class="directory-text-name">
+                                   <a href="" class="text-name-a" >Lựa chọn từ Spotify</a>
+                              </div>
+                              <div class="directory-text-show_all">
+                                   <a href="" class="text-name-a">Hiện tất cả</a>
+                              </div> 
+                        </div>
+                        <div class="main-directory-box">
+                           <div class="directory-box">
+                               <div class="box-avt">
+                                   <div class="box-image">
+                                       <img src="atsh.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                   </div>
+                               <div class="box-button_play">
+                                     <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                       aria-hidden="true">
+                                    </i>   
+                               </div>
+                               </div>
+                               <div class="box-text">
+                                   <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;">Với ANH TRAI "SAY HI", Quang Trung, RHYDER và nhiều hơn nữa</a>
+                               </div>
+                           </div>
+                           <div class="directory-box">
+                               <div class="box-avt">
+                                   <div class="box-image">
+                                       <img src="dangrangto.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                   </div>
+                               <div class="box-button_play">
+                                     <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                       aria-hidden="true">
+                                    </i>   
+                               </div>
+                               </div>
+                               <div class="box-text">
+                                   <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với Wxrdie, RPT MCK, Low G và nhiều hơn nữa</a>
+                               </div>
+                           </div>
+                           <div class="directory-box">
+                               <div class="box-avt">
+                                   <div class="box-image">
+                                       <img src="hth3.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                   </div>
+                               <div class="box-button_play">
+                                     <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                       aria-hidden="true">
+                                    </i>   
+                               </div>
+                               </div>
+                               <div class="box-text">
+                                   <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với MANBO, ANH TRAI "SAY HI", RPT MCK và nhiều hơn nữa </a>
+                               </div>
+                            </div>
+                          <div class="directory-box">
+                               <div class="box-avt">
+                                   <div class="box-image">
+                                       <img src="chillies.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                   </div>
+                               <div class="box-button_play">
+                                     <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                       aria-hidden="true">
+                                    </i>   
+                               </div>
+                               </div>
+                               <div class="box-text">
+                                   <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >Với Thịnh Suy, Vũ., Da LAB và nhiều hơn nữa </a>
+                               </div>
+                            </div>
+                               <div class="directory-box">
+                                <div class="box-avt">
+                                    <div class="box-image">
+                                        <img src="vu.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                    </div>
+                                <div class="box-button_play">
+                                      <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                        aria-hidden="true">
+                                     </i>   
+                                </div>
+                                </div>
+                                <div class="box-text">
+                                    <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >384. Nếu ai đó chọc ghẹo bạn, hãy nói với họ điều này</a>
+                                </div>
+                           </div>
+                           <div class="directory-box">
+                            <div class="box-avt">
+                                <div class="box-image">
+                                    <img src="cay-nen.jpg" alt="" style="width: 100%;height: 100%;border-radius:10px">
+                                </div>
+                            <div class="box-button_play">
+                                  <i class="fa fa-play" style="color: black;font-size: 20px;" 
+                                    aria-hidden="true">
+                                 </i>   
+                            </div>
+                            </div>
+                            <div class="box-text">
+                                <a href="" style="text-decoration: none;color: white;width: 150px;height: 35px;overflow: hidden;" >SS5E12: Kết lại nỗi lo toan về tiền</a>
+                            </div>
+                        </div>
+                   </section>
+                   <section class="poster-main">
+                        <div class="poster-main-block" style="display: flex;">
+                           <a href="">
+                            <div class="poster-main-block_1">
+                                <header class="block_1-header">
+                                    <div class="block_1-header-main">
+                                        <a href="" class="block_1-header-main-a">
+                                            Tư duy như nước
+                                        </a>
+                                    </div>
+                                    <div class="block_1-header-extra">
+                                        <span>Tập</span>
+                                        <a href="" class="block_1-header-extra-a">
+                                            - Nguyễn Phi Vân's Podcast
+                                        </a>
+                                    </div>
+                                </header>
+                                <div class="block_1-image">
+                                    <img src="nguyen-phi-van-blog.jpg" alt="" class="block_1-image-img">
+                                </div>
+                                <footer class="block_1-footer">
+                                    <div class="block_1-footer-text">
+                                        Mình làm thứ gì trong đời, dù làm kinh doanh làm thuê, làm freelance, hay làm chuyên gia đi chăng nữa thì cũng có lúc sẽ rơi vào tình trạng bị stuck. Đây là trạng thái bình thường xảy ra khi có quá nhiều biến động trong các cấu phần tạo nên sự suôn sẻ cho những việc đang làm. Trong podcast này, Phi Vân sẽ chia sẻ cách bản thân ứng dụng để giúp mình không những không bị stuck mà còn có thể luôn chủ động tìm ra những cách tiếp cận mới. 
+                                    </div>
+                                </footer>
+                                <div class="block_1-icon">
+                                    <div class="block_1-icon_1">
+                                        <svg style="width: 100%;height: 100%;color: whitesmoke;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="block_1-icon_2">
+                                        <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 40px; color: whitesmoke;"></i>
+                                    </div>
+                                    <div class="block_1-icon_3">
+                                        <i class="fa fa-play" aria-hidden="true" style="font-size: 20px;padding-left: 3px;padding-top: 1px;"></i>
+                                    </div>
+                                </div>
+                            </div> 
+                           </a>   
+                        </div>
+                        <div class="poster-main-block">
+                            <a href="">
+                                <div class="poster-main-block_2">
+                                    <div class="poster-main-block_2-bg">
+                                        <img src="mtp.jpg" alt=""  style="width: 100%;height: 100%;border-radius: 10px;">
+                                    </div>
+                                    <header class="block_2-header">
+                                        <div class="block_2-header-avt">
+                                            <img src="list-mtp.jpg" alt="" style="width: 100%;height: 100%;">
+                                        </div>
+                                        <div class="block_2-header-main">
+                                            <div class="block_2-header-main-name">
+                                                <a href="" style="text-decoration: none;color: whitesmoke;">Tuyển tập nhạc của Sơn Tùng M-TP</a>
+                                            </div>
+                                            <div class="block_2-header-main-list">
+                                                <a href="" style="text-decoration: none;color: whitesmoke;">
+                                                    <span>Danh sách phát</span>
+                                                    <span>Spotify</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    
+                                    <div class="block_2-icon">
+                                        <div class="block_2-icon_1">
+                                            <svg style="width: 100%;height: 100%;color: whitesmoke;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="block_2-icon_2">
+                                            <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 40px; color: whitesmoke;"></i>
+                                        </div>
+                                        <div class="block_2-icon_3">
+                                            <i class="fa fa-play" aria-hidden="true" style="font-size: 20px;padding-left: 3px;padding-top: 1px;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                   </section>
+                   <div class="footer">
+                        <div class="footer-topsecion">
+                            <div class="footer__StyledTopLinks">
+                                <div class="TopLinksGroup__LinksGroup">
+                                    <header class="LinksGroup-header">
+                                        <div class="header-name">Công ty</div>
+                                        <ul class="header-list-ul">
+                                            <a href="" style="text-decoration: none;" class="header-list-ul-a" >
+                                                <li>Giới thiệu</li>
+                                                <li>Việc làm</li>
+                                                <li>For the Record</li>
+                                            </a>
+                                        </ul>
+                                        
+                                    </header>
+                                </div>
+                                <div class="TopLinksGroup__LinksGroup">
+                                    <header class="LinksGroup-header">
+                                        <div class="header-name">Cộng đồng</div>
+                                        <ul class="header-list-ul">
+                                            <a href="" style="text-decoration: none;" class="header-list-ul-a" >
+                                                <li>Danh sách nghệ sĩ</li>
+                                                <li>Nhà phát triển</li>
+                                                <li>Quảng cáo</li>
+                                                <li>Nhà đầu tư</li>
+                                                <li>Nhà cung cấp</li>
+                                            </a>
+                                        </ul>
+                                    </header>
+                                </div>
+                                <div class="TopLinksGroup__LinksGroup">
+                                    <header class="LinksGroup-header">
+                                        <div class="header-name">Liên kết hữu ích</div>
+                                        <ul class="header-list-ul">
+                                            <a href="" style="text-decoration: none;" class="header-list-ul-a" >
+                                                <li>Hỗ Trợ</li>
+                                                <li>Ứng dụng di động miễn phí</li>
+                                            </a>
+                                        </ul>
+                                    </header>
+                                </div>
+                                <div class="TopLinksGroup__LinksGroup">
+                                    <header class="LinksGroup-header">
+                                        <div class="header-name">Các gói Spotify</div>
+                                        <ul class="header-list-ul">
+                                            <a href="" style="text-decoration: none;" class="header-list-ul-a" >
+                                                <li>Premium Individual</li>
+                                                <li>Premium Student</li>
+                                                <li>Spotify Free"</li>
+                                            </a>
+                                        </ul>
+                                    </header>
+                                </div>
+                            </div>
+                            <div class="foot-SocialLinks">
+                               <a href="" style="text-decoration: none;display: flex; color: whitesmoke;justify-content: space-around; width: 120px;" >
+                                <div class="foot-SocialLinks-Icon">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </div>
+                                <div class="foot-SocialLinks-Icon">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </div>
+                                <div class="foot-SocialLinks-Icon">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </div>
+                               </a>
+                            </div> 
+                        </div>
+                        <hr style="width: 800px;margin-top: 30px;margin: auto;"> 
+                        <div class="Footer__StyledBottomLinks">
+                            <div class="BottomLinks__BottomLinks">
+                                <ul class="BottomLinks__BottomLinks_ul">
+                                    <a href="" class="BottomLinks__BottomLinks_ul_a">
+                                        <li>Pháp lý</li>
+                                        <li>Trung tâm an toàn và quyền riêng tư</li>
+                                        <li>Chính sách quyền riêng tư</li>
+                                        <li>Cookie</li>
+                                        <li>Giới thiệu quảng cáo</li>
+                                        <li>Hỗ trợ tiếp cận</li>
+                                    </a>
+                                </ul>
+                            </div>
+                            <div class="CountryCopyright">
+                                © 2024 Spotify AB
+                            </div>
+                        </div>     
+                   </div>
+                   </div>
+                </div>
+            </div>
+            <div class="nav-bar-bottom">
+                <div class="nar-bar_now-playing-widget">
+                    <div class="now-playing-widget_avt">
+                        <img src="atsh.jpg" alt="" class="now-playing-widget_avt_img">
+                    </div>
+                    <div class="now-playing-widget_header">
+                        <a href="" class="now-playing-widget_header_main">
+                            <div >
+                                Anh Trai Say Hi
+                            </div>
+                        </a>
+                        <a href="" class="now-playing-widget_header_extra">
+                            <div >
+                                Sao hạng A
+                            </div>
+                        </a>
+                    </div>
+                    <div class="now-playing-widget_icon">
+                        <i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 20px; color: whitesmoke;"></i>
+                    </div>
+                </div>
+                <div class="nav-bar_player-controls">
+                    <div class="player-controls_icon">
+                        <div class="player-controls_icon_up">
+                            <div class="player-controls_icon_left">
+                                <div class="player-controls_icon_left_rewind">
+                                    <svg style="width: 30px;height: 30px;color: whitesmoke;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rewind-circle" viewBox="0 0 16 16">
+                                        <path d="M7.729 5.055a.5.5 0 0 0-.52.038l-3.5 2.5a.5.5 0 0 0 0 .814l3.5 2.5A.5.5 0 0 0 8 10.5V8.614l3.21 2.293A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.79-.407L8 7.386V5.5a.5.5 0 0 0-.271-.445"/>
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+                                      </svg>
+                                </div>
+                            </div>
+                            <div class="player-controls_icon_between">
+                                <i class="fa fa-play-circle" aria-hidden="true" style="font-size: 30px;color: whitesmoke;"></i>
+                            </div>
+                            <div class="player-controls_icon_right">
+                                <svg style="height: 30px;width: 30px;color: whitesmoke;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fast-forward-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                    <path d="M4.271 5.055a.5.5 0 0 1 .52.038L8 7.386V5.5a.5.5 0 0 1 .79-.407l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 8 10.5V8.614l-3.21 2.293A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="player-controls_icon_under">
+                            <div class="progress-bar">
+                                <div class="progress">
+                                    <div class="progress_extra"></div>
+                                </div>
+                                
+                                <span class="time-start">6:58</span>
+                                <span class="time-end">19:39</span>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-bar_control-button-npv">
+                    <div class="control-button-list">
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                    <div class="control-button-loudspeaker">
+                        <i class="fa fa-volume-up" aria-hidden="true" ></i>
+                    </div>
+                    <div class="control-button-zoom">
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
