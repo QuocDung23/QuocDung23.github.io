@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
+import RenderPokemon from './components/render-pokemon.vue';
 
 let pokemons = [];
 const offset = ref(0);
@@ -30,10 +31,6 @@ async function getPokemon() {
   
 }
 
-function getIDPokemon(url) {
-    const parts = url.split('/'); 
-    return parseInt(parts[parts.length - 2], 10);
-}
 
 function handleLoadMore() {
   offset.value += numberOfRender;
@@ -63,18 +60,10 @@ getPokemon();
         />
       </div>
       <div class="items">
-        <div v-for="(item, index) in renderPokemons" :key="index" class="item">
-          <div class="item__id">
-            #{{ getIDPokemon(item.url) }}
-          </div>
-          <div 
-            class="item_image"
-            :style="{ backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getIDPokemon(item.url)}.png')` }"
-          ></div>
-          <div class="item__name">
-            {{ item.name }}
-          </div>
-        </div>
+          <RenderPokemon 
+          v-for="(item, index) in renderPokemons" :key="index"
+          :pokemon="item"
+          />        
       </div>
       <button v-if="renderPokemons.length < filteredPokemons.length" class="btn" @click="handleLoadMore">
         LOAD MORE
