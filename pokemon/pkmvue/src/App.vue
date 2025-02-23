@@ -1,107 +1,125 @@
 <script setup>
-import { computed, ref } from 'vue';
-import RenderPokemon from './components/render-pokemon.vue';
+import { computed, ref } from "vue";
+import RenderPokemon from "./components/render-pokemon.vue";
+import PokemonDetail from "./components/PokemonDetail.vue";
+import { fetchAPI } from "./utils";
 
-let pokemons = [];
+// POKEMON LIST
+let pokemon = [];
 const offset = ref(0);
-const numberOfRender = 12;
+const numberOfRender = 15;
 
-const filteredPokemons = ref([]);
-const renderPokemons = computed(() => {
-  const result = filteredPokemons.value.slice(0, offset.value + numberOfRender)
+const filteredPokemon = ref([]);
+const renderPokemon = computed(() => {
+  const result = filteredPokemon.value.slice(0, offset.value + numberOfRender);
 
-  const fetch = result.map(p => fetchAPI(p.url))
-  console.log(fetch)
+  const fetch = result.map((p) => fetchAPI(p.url));
+  console.log(fetch);
 
-  return result
-})
+  return result;
+});
 
-
-const fetchAPI = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-}
+fetchAPI()
 
 async function getPokemon() {
-    const data = await fetchAPI('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898');
-    pokemons = data.results;
-    filteredPokemons.value = pokemons;
-
-  
+  const data = await fetchAPI("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=898");
+  pokemon = data.results;
+  filteredPokemon.value = pokemon;
 }
-
 
 function handleLoadMore() {
   offset.value += numberOfRender;
 }
 
 function handleSearch(event) {
-  filteredPokemons.value = pokemons.filter((pokemon) => {
+  filteredPokemon.value = pokemon.filter((pokemon) => {
     return pokemon.name.includes(event.target.value);
   });
-  offset.value = 0; 
+  offset.value = 0;
+}
+getPokemon();
+
+// SELECT POKEMON
+const selectedPokemon = ref(null);
+
+function handleSelectPokemon(pokemonData) {
+  selectedPokemon.value = pokemonData
 }
 
-getPokemon();
+function handleBack() {
+  selectedPokemon.value = null
+}
 </script>
 
 <template>
-  <div class="root">
-    <div class="container">
+  <div class="container">
+    <PokemonDetail v-if="selectedPokemon" :pokemon="selectedPokemon" @back="handleBack" />
+    <template v-else>
       <!-- Title -->
       <div class="title">
         <p class="title__main">Pokemon API</p>
-        <input 
-          class="title__input" 
-          type="text" 
-          placeholder="Search some Pokemon..." 
+        <input
+          class="title__input"
+          type="text"
+          placeholder="Search some Pokemon..."
           @input="handleSearch"
         />
       </div>
       <div class="items">
-          <RenderPokemon 
-          v-for="(item, index) in renderPokemons" :key="index"
-          :pokemon="item"
-          />        
+        <RenderPokemon
+          v-for="pokemon in renderPokemon"
+          :key="pokemon"
+          :url="pokemon.url"
+          @select-pokemon="handleSelectPokemon"
+        />
       </div>
-      <button v-if="renderPokemons.length < filteredPokemons.length" class="btn" @click="handleLoadMore">
+      <button
+        v-if="renderPokemon.length < filteredPokemon.length"
+        class="btn"
+        @click="handleLoadMore"
+      >
         LOAD MORE
       </button>
-    </div>
+    </template>
   </div>
 </template>
 
 <style scoped>
-.container {
-  .header {
+  .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .search__bar {
-      max-width: 500px;
-      width: 100%;
-      margin: 0 15px 50px;
-      .search {
-        width: 100%;
-        padding: 20px;
-        border: none;
-        border-radius: 30px;
-        outline: 1px solid #00000036;
-        box-shadow: #64646f33 0 7px 29px;
-        font-size: 16px;
-        transition: all 0.2s ease;
-      }
-    }
   }
+
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-self: center; align-items: center;
+    margin: 20px 0px;
+  }
+  .title__main {
+    font-size: 50px;
+  }
+  .title__input {
+    width: 450px;
+    height: 50px;
+    border-radius: 99px;
+}
+
 
   .items {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
-
+    gap: 10px;
+  }
+    .item:hover {
+      box-shadow: #e9e9ed33 0 7px 29px;
+      transition: 0.3s;
+    }
     .item {
       display: flex;
       flex-direction: column;
@@ -110,13 +128,9 @@ getPokemon();
       padding: 50px 5px;
       cursor: pointer;
       border-radius: 10px;
-      box-shadow: #f4f4f4 0 7px 29px;
+      box-shadow: #0c0707 0 7px 29px;
+      background-color: rgb(136, 42, 42);
       text-transform: capitalize;
-      transition: 0.3s;
-    }
-
-    .item:hover {
-      box-shadow: #39393f33 0 7px 29px;
       transition: 0.3s;
     }
 
@@ -126,12 +140,12 @@ getPokemon();
       background-size: cover;
       background-position: center;
     }
-  }
+  
 
   .btn {
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
   }
-}
+
 </style>
