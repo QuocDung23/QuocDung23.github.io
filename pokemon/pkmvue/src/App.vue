@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import RenderPokemon from "./components/render-pokemon.vue";
 import PokemonDetail from "./components/PokemonDetail.vue";
-import { fetchAPI } from "./utils";
+import { fetchAPI } from "@/utils/index.js";
 
 // POKEMON LIST
 let pokemon = [];
@@ -18,7 +18,6 @@ const renderPokemon = computed(() => {
 
   return result;
 });
-
 fetchAPI()
 
 async function getPokemon() {
@@ -42,8 +41,11 @@ getPokemon();
 // SELECT POKEMON
 const selectedPokemon = ref(null);
 
-function handleSelectPokemon(pokemonData) {
-  selectedPokemon.value = pokemonData
+function handleSelectPokemon(pokemonSpecies, pokemonData) {
+  selectedPokemon.value = { 
+    species: pokemonSpecies, 
+    evo: pokemonData 
+  }
 }
 
 function handleBack() {
@@ -58,26 +60,13 @@ function handleBack() {
       <!-- Title -->
       <div class="title">
         <p class="title__main">Pokemon API</p>
-        <input
-          class="title__input"
-          type="text"
-          placeholder="Search some Pokemon..."
-          @input="handleSearch"
-        />
+        <input class="title__input" type="text" placeholder="Search some Pokemon..." @input="handleSearch" />
       </div>
       <div class="items">
-        <RenderPokemon
-          v-for="pokemon in renderPokemon"
-          :key="pokemon"
-          :url="pokemon.url"
-          @select-pokemon="handleSelectPokemon"
-        />
+        <RenderPokemon v-for="pokemon in renderPokemon" :key="pokemon" :name="pokemon.name" :url="pokemon.url"
+          @select-pokemon="handleSelectPokemon" />
       </div>
-      <button
-        v-if="renderPokemon.length < filteredPokemon.length"
-        class="btn"
-        @click="handleLoadMore"
-      >
+      <button v-if="renderPokemon.length < filteredPokemon.length" class="btn" @click="handleLoadMore">
         LOAD MORE
       </button>
     </template>
@@ -85,67 +74,72 @@ function handleBack() {
 </template>
 
 <style scoped>
-  .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    justify-self: center; align-items: center;
-    margin: 20px 0px;
-  }
-  .title__main {
-    font-size: 50px;
-  }
-  .title__input {
-    width: 450px;
-    height: 50px;
-    border-radius: 99px;
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
-  .items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-    .item:hover {
-      box-shadow: #e9e9ed33 0 7px 29px;
-      transition: 0.3s;
-    }
-    .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 16.66%;
-      padding: 50px 5px;
-      cursor: pointer;
-      border-radius: 10px;
-      box-shadow: #0c0707 0 7px 29px;
-      background-color: rgb(136, 42, 42);
-      text-transform: capitalize;
-      transition: 0.3s;
-    }
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  margin: 20px 0px;
+}
 
-    .item_image {
-      width: 100px; /* Adjust size */
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-    }
-  
+.title__main {
+  font-size: 50px;
+}
 
-  .btn {
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
+.title__input {
+  width: 450px;
+  height: 50px;
+  border-radius: 99px;
+}
 
+
+.items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item:hover {
+  box-shadow: #e9e9ed33 0 7px 29px;
+  transition: 0.3s;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16.66%;
+  padding: 50px 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: #0c0707 0 7px 29px;
+  background-color: rgb(136, 42, 42);
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.item_image {
+  width: 100px;
+  /* Adjust size */
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.btn {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
 </style>

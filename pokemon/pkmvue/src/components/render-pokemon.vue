@@ -2,32 +2,42 @@
 import { fetchAPI } from "@/utils";
 import { ref } from "vue";
 
-const props = defineProps(["url"]);
+const props = defineProps(["name", "url"]);
+console.log("Check data" ,props.name)
+
+console.log("Check URL" ,props.url)
 
 defineEmits("select-pokemon");
+ 
+const pokemonSpecies = ref({});
+const pokemonEvolutionChain = ref({});
 
-const pokemon = ref({});
+fetchAPI("https://pokeapi.co/api/v2/pokemon-species/" + props.name).then((data) => {
+  pokemonSpecies.value = data;
+});
+
 
 fetchAPI(props.url).then((data) => {
-  pokemon.value = data;
+  pokemonEvolutionChain.value = data;
 });
+fetchAPI()
 </script>
 
 <template>
-  <div class="item" @click="$emit('select-pokemon', pokemon)">
-    <div class="item__id">#{{ pokemon.id }}</div>
+  <div class="item" @click="$emit('select-pokemon', pokemonSpecies, pokemonEvolutionChain)">
+    <div class="item__id">#{{ pokemonEvolutionChain.id }}</div>
     <div
       class="item_image"
       :style="{
-        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png')`
+        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonEvolutionChain.id}.png')`
       }"
     ></div>
     <div class="item__name">
-      {{ pokemon.name }}
+      {{ pokemonEvolutionChain.name }}
     </div>
     <div class="type">
       <span
-        v-for="type in pokemon.types"
+        v-for="type in pokemonEvolutionChain.types"
         :key="type.type.name"
         class="type_item"
         :class="type.type.name"
@@ -63,13 +73,6 @@ fetchAPI(props.url).then((data) => {
   background-position: center;
 }
 
-.item__id {
-  /* Style as needed */
-}
-
-.item__name {
-  /* Style as needed */
-}
 .type {
   display: flex;
 }
