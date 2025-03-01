@@ -13,7 +13,7 @@ console.log("Check URL", props.url)
 defineEmits("select-pokemon");
 
 const pokemonSpecies = ref({});
-const pokemonEvolutionChain = ref({});
+const pokemonSection = ref({});
 
 fetchAPI(`https://pokeapi.co/api/v2/pokemon-species/${props.name}`).then((data) => {
   pokemonSpecies.value = data;
@@ -21,29 +21,36 @@ fetchAPI(`https://pokeapi.co/api/v2/pokemon-species/${props.name}`).then((data) 
 
 
 fetchAPI(props.url).then((data) => {
-  pokemonEvolutionChain.value = data;
+  pokemonSection.value = data;
 });
 
 function viewPokemonDetail() {
   sessionStorage.setItem('selectdPokemon', JSON.stringify(pokemonSpecies.value))
-  router.push('/' + pokemonSpecies.value.name)
+  router.push('/pokemon/' + pokemonSpecies.value.name)
 }
 </script>
 
 <template>
-  <div class="item" @click="viewPokemonDetail">
-    <div class="item__id" v-if="pokemonEvolutionChain.id">#{{ pokemonEvolutionChain.id }}</div>
-    <div class="item_image" :style="{
-      backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonEvolutionChain.id}.png')`
-    }"></div>
+  <div>
+    <div class="item" @click="viewPokemonDetail">
+    <div class="item__id" v-if="pokemonSection.id">#{{ pokemonSection.id }}</div>
+    <div class="item_image"
+    :style="{
+        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonSection.id}.png')`
+      }">
+      <!-- :style="{
+        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonEvolutionChain.id}.png')`
+      }" -->
+    </div>
     <div class="item__name">
-      {{ pokemonEvolutionChain.name }}
+      {{ pokemonSection.name }}
     </div>
     <div class="type">
-      <span v-for="type in pokemonEvolutionChain.types" :key="type.type.name" class="type_item" :class="type.type.name">
+      <span v-for="type in pokemonSection.types" :key="type.type.name" class="type_item" :class="type.type.name">
         {{ type.type.name }}
       </span>
     </div>
+  </div>
   </div>
 </template>
 
@@ -52,8 +59,9 @@ function viewPokemonDetail() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 140px;
-  padding: 50px 5px;
+  justify-content: space-between;
+  width: 180px;
+  height: 250px;
   cursor: pointer;
   border-radius: 10px;
   text-transform: capitalize;
@@ -70,5 +78,4 @@ function viewPokemonDetail() {
   background-size: cover;
   background-position: center;
 }
-
 </style>

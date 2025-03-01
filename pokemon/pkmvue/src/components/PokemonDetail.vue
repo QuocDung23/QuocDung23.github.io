@@ -3,6 +3,7 @@ import { fetchAPI } from '@/utils';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import BackHome from './input/BackHome.vue';
+import EvolutionPokemon from './EvolutionPokemon.vue';
 
 
 const route = useRoute();
@@ -49,7 +50,7 @@ const getStatAbbreviation = (statName) => {
   <BackHome/>
   <div class="container_detail" v-if="pokemonDetail.id">
     <div class="detail_image" :style="{
-      backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonDetail.id}.png')`
+      backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonDetail.id}.png')`
     }"></div>
     <div class="type">
       <span v-for="type in pokemonDetail.types" :key="type.type.name" class="type_item" :class="type.type.name">
@@ -99,6 +100,7 @@ const getStatAbbreviation = (statName) => {
   <div v-else>
     <h1>Loading Pokemon Details.....</h1>
   </div>
+  <EvolutionPokemon :pokemonName="pokemonDetail.name"/>
 </template>
 
 <style>

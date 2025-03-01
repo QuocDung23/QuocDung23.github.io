@@ -1,13 +1,12 @@
 <script setup>
 import { computed, ref } from "vue";
 import RenderPokemon from "@/components/RenderPokemon.vue";
-import PokemonDetail from "@/components/PokemonDetail.vue";
 import { fetchAPI } from "@/utils/index.js";
 
 // POKEMON LIST
 let pokemon = [];
 const offset = ref(0);
-const numberOfRender = 15;
+const numberOfRender = 30;
 
 const filteredPokemon = ref([]);
 const renderPokemon = computed(() => {
@@ -48,16 +47,11 @@ function handleSelectPokemon(pokemonSpecies, pokemonData) {
   }
 }
 
-function handleBack() {
-  selectedPokemon.value = null
-}
 
 </script>
 
 <template>
   <div class="container">
-    <PokemonDetail v-if="selectedPokemon" :pokemon="selectedPokemon" @back="handleBack" />
-    <template v-else>
       <!-- Title -->
       <div class="title">
         <p class="title__main">Pokemon API</p>
@@ -65,30 +59,28 @@ function handleBack() {
       </div>
       <div class="items">
         <RenderPokemon v-for="pokemon in renderPokemon" :key="pokemon" :name="pokemon.name" :url="pokemon.url"
-          @select-pokemon="handleSelectPokemon" />
+          @select-pokemon="handleSelectPokemon" class="item"/>
       </div>
       <button v-if="renderPokemon.length < filteredPokemon.length" class="btn" @click="handleLoadMore">
         LOAD MORE
       </button>
-    </template>
   </div>
 </template>
 
 <style scoped>
 .container {
   width: 100%;
+  max-width: 1400px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 20px
 }
 
 
 .title {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-items: center;
+  text-align: center;
   margin: 20px 0px;
 }
 
@@ -100,18 +92,20 @@ function handleBack() {
   width: 450px;
   height: 50px;
   border-radius: 99px;
+  padding-left: 20px;
 }
 
 
 .items {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 15px;
+ width: 100%;
+justify-content: center;
 }
 
 .item:hover {
-  box-shadow: #e9e9ed33 0 7px 29px;
+  box-shadow: #47475033 0 7px 29px;
   transition: 0.3s;
 }
 
@@ -119,14 +113,12 @@ function handleBack() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 16.66%;
-  padding: 50px 5px;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: #0c0707 0 7px 29px;
-  background-color: rgb(136, 42, 42);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-transform: capitalize;
-  transition: 0.3s;
+  transition:  0.3s;
+  cursor: pointer;
 }
 
 .item_image {
@@ -141,5 +133,12 @@ function handleBack() {
   padding: 10px 20px;
   margin-top: 20px;
   cursor: pointer;
+  background-color: #ff4d4f;
+  border: none;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+.btn:hover {
+  opacity: 0.5;
 }
 </style>
