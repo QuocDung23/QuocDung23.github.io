@@ -22,7 +22,7 @@ const parseEvolutionChain = (chain) => {
     const pokemonId = extractPokemonId(node.species.url);
     evolutions.push({
       name: pokemonName,
-      image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`
+      image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
     });
     
     node.evolves_to.forEach(traverseEvolution);
@@ -46,10 +46,8 @@ const fetchEvolutionData = async () => {
   }
 };
 
-// Chạy khi component được mount
 onMounted(fetchEvolutionData);
 
-// Theo dõi nếu tên Pokémon thay đổi
 watch(() => props.pokemonName, fetchEvolutionData);
 </script>
 
