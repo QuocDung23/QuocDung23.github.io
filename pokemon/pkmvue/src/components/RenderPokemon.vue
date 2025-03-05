@@ -36,11 +36,8 @@ function viewPokemonDetail() {
     <div class="item__id" v-if="pokemonSection.id">#{{ pokemonSection.id }}</div>
     <div class="item_image"
     :style="{
-        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonSection.id}.png')`
+        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonSection.id}.png')`
       }">
-      <!-- :style="{
-        backgroundImage: `url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonEvolutionChain.id}.png')`
-      }" -->
     </div>
     <div class="item__name">
       {{ pokemonSection.name }}
